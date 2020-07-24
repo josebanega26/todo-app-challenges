@@ -1,0 +1,17 @@
+.tabs--button {
+  min-width: 120px;
+  min-height: 20px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.tabs--underline {
+  border: none;
+  border-bottom: 4px solid #6da6f2;
+  border-radius: 4px 4px 0px 0px;
+  outline: none;
+}
