@@ -1,0 +1,41 @@
+.todoAdd--container {
+  padding-top: 0.5rem;
+}
+.todoAdd--container {
+  display: flex;
+}
+
+.todoAdd--container input[type='text'] {
+  width: 100%;
+  margin-right: 25px;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding-left: 12px;
+  color: #828282;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.todoAdd--container input[type='submit'] {
+  width: 109px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 12px;
+  border: none;
+  background: #6da6f2;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.todoAdd--container input[type='button']:hover {
+  transform: scale(0.9);
+}
+.todoAdd--container input[type='text']:focus {
+  border: 2px solid #6da6f2;
+}
