@@ -1,12 +1,13 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useContext } from 'react';
 import { addTodo } from '../../reducers/todo.actions';
 import './TodoAdd.style.css';
+import { TodoContext } from '../../context/TodoContext';
 
-interface TodoAddProps {
-  dispatch: Function;
-}
-const TodoAdd = ({ dispatch }: TodoAddProps) => {
+interface TodoAddProps {}
+const TodoAdd = (props: TodoAddProps) => {
+  const todoContext = useContext(TodoContext);
   const [input, setInput] = useState('');
+
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
@@ -21,9 +22,10 @@ const TodoAdd = ({ dispatch }: TodoAddProps) => {
       id: `${idPrefix}-${input}`,
       done: false,
     };
-    dispatch(addTodo(newTodo));
+    todoContext?.dispatch(addTodo(newTodo));
     setInput('');
   };
+
   return (
     <form className='todoAdd--container' onSubmit={handleSubmit}>
       <input

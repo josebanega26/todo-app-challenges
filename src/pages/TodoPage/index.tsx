@@ -4,19 +4,19 @@ import TabsList from '../../components/TabsList';
 import TodoAdd from '../../components/TodoAdd';
 import { Todo } from '../../models/Todo.interface';
 import './TodoPage.style.css';
+import { TodoContext } from '../../context/TodoContext';
+import TodoList from '../../components/TodoList';
 
 const TodoPage = () => {
   const [todos, dispatch] = useReducer(todoReducer, initialState);
   return (
-    <div className='todoPage--container'>
-      <TabsList></TabsList>
-      <TodoAdd dispatch={dispatch}></TodoAdd>
-      <ul>
-        {todos.map(({ todo, id }: Todo) => (
-          <li key={id}>{todo}</li>
-        ))}
-      </ul>
-    </div>
+    <TodoContext.Provider value={{ todos, dispatch }}>
+      <div className='todoPage--container'>
+        <TabsList></TabsList>
+        <TodoAdd></TodoAdd>
+        <TodoList todos={todos}></TodoList>
+      </div>
+    </TodoContext.Provider>
   );
 };
 
