@@ -6,14 +6,14 @@ import './TabList.style.css';
 const tabsList: TabInterface[] = [
   { title: 'All', isActived: true },
   { title: 'Active', isActived: false },
-  { title: 'Complete', isActived: false }
+  { title: 'Complete', isActived: false },
 ];
 const TabList = () => {
   const [tabsData, setTabsData] = useState<TabInterface[]>(tabsList);
   return (
     <div>
-      <div className="tabsList--container">
-        {tabsList.map(({ isActived, title }) => (
+      <div className='tabsList--container'>
+        {tabsData.map(({ isActived, title }) => (
           <Tab key={`uid-${title}`} isActived={isActived} title={title}></Tab>
         ))}
       </div>

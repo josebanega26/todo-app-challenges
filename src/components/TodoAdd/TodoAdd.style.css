@@ -33,7 +33,7 @@
   transition: 0.3s;
 }
 
-.todoAdd--container input[type='button']:hover {
+.todoAdd--container input[type='submit']:hover {
   transform: scale(0.9);
 }
 .todoAdd--container input[type='text']:focus {
