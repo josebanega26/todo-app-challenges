@@ -5,6 +5,7 @@
   margin-bottom: 8px;
   position: relative;
   justify-content: space-between;
+  animation: fadeIn 0.8s;
 }
 
 .todoItem--container span {
@@ -22,4 +23,13 @@
 }
 .delete--button:hover {
   fill: #f18989;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
 }
