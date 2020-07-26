@@ -1,14 +1,15 @@
 .checkbox--container .checkmark {
-    border: 1px solid #828282;
-    border-radius: 4px;
-    box-sizing: border-box;
-    height: 24px;
-    width: 24px;
-    fill: white;
-    cursor: pointer;
+  border: 1px solid #828282;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 24px;
+  width: 24px;
+  fill: white;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.checkbox--container  .checked {
-    border-color: #6da6f2;;
-    background-color: #6da6f2;;
-    fill: white;
+.checkbox--container .checked {
+  border-color: #6da6f2;
+  background-color: #6da6f2;
+  fill: white;
 }

@@ -1,0 +1,23 @@
+.Button--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 4px;
+  color: #fff;
+  padding: 12px;
+  outline: none;
+  fill: #fff;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.danger {
+  background-color: #f18989;
+  border: 1px solid #f18989;
+  transition: 0.3s;
+}
+.danger:hover {
+  background-color: #f74545;
+  border: 1px solid #f74545;
+}
