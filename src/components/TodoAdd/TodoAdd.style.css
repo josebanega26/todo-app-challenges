@@ -34,7 +34,7 @@
 }
 
 .todoAdd--container input[type='submit']:hover {
-  transform: scale(0.9);
+  background-color: #4e98fb;
 }
 .todoAdd--container input[type='text']:focus {
   border: 2px solid #6da6f2;

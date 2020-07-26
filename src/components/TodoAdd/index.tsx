@@ -20,23 +20,23 @@ const TodoAdd = (props: TodoAddProps) => {
     const newTodo = {
       todo: input,
       id: `${idPrefix}-${input}`,
-      done: false,
+      done: false
     };
-    todoContext?.dispatch(addTodo(newTodo));
+    todoContext?.todoDispatch(addTodo(newTodo));
     setInput('');
   };
 
   return (
-    <form className='todoAdd--container' onSubmit={handleSubmit}>
+    <form className="todoAdd--container" onSubmit={handleSubmit}>
       <input
-        type='text'
-        autoComplete='off'
-        name='title'
+        type="text"
+        autoComplete="off"
+        name="title"
         value={input}
         onChange={handleInput}
-        placeholder='add details...'
+        placeholder="add details..."
       />
-      <input type='submit' value='Add' />
+      <input type="submit" value="Add" />
     </form>
   );
 };

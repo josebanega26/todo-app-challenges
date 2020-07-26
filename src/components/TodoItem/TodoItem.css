@@ -1,18 +1,25 @@
-.todoItem--container{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-bottom: 8px;
-
+.todoItem--container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+  position: relative;
+  justify-content: space-between;
 }
 
-.todoItem--container span{
-    margin-left: 8px;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
+.todoItem--container span {
+  margin-left: 8px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-
-.done-Item{
-    text-decoration: line-through;
+.done-Item {
+  text-decoration: line-through;
+}
+.delete--button {
+  fill: #bdbdbd;
+  transition: 0.3s;
+}
+.delete--button:hover {
+  fill: #f18989;
 }

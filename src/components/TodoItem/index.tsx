@@ -1,23 +1,31 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../../context/TodoContext';
 import { Todo } from '../../models/Todo.interface';
-import { setDone } from '../../reducers/todo.actions';
+import { toggleDone, deleteTodoItem } from '../../reducers/todo.actions';
 import Checkbox from '../Checkbox';
+import { ReactComponent as DeleteIcon } from '../../assets/icons/deleteIcon.svg';
 import './TodoItem.css';
 
 const TodoItem = (todo: Todo) => {
-  const { done, id, todo: title } = todo;
+  const { done, todo: title } = todo;
   const todoContext = useContext(TodoContext);
 
   const handlerClick = () => {
-    todoContext?.dispatch(setDone(todo));
+    todoContext?.todoDispatch(toggleDone(todo));
+  };
+  const handlerDelete = () => {
+    todoContext?.todoDispatch(deleteTodoItem(todo));
   };
   const isDone = done ? 'done-Item' : '';
-  console.log('isDone', isDone);
   return (
-    <li className={`todoItem--container  ${isDone}`} onClick={handlerClick}>
-      <Checkbox checked={done}></Checkbox>
-      <span className={isDone}>{title}</span>
+    <li className={`todoItem--container  ${isDone}`}>
+      <div className="d-flex" onClick={handlerClick}>
+        <Checkbox checked={done}></Checkbox>
+        <span className={isDone}>{title}</span>
+      </div>
+      {todoContext?.activedTag === 'Completed' ? (
+        <DeleteIcon className="delete--button" onClick={handlerDelete}></DeleteIcon>
+      ) : null}
     </li>
   );
 };
